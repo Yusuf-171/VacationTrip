@@ -1,0 +1,40 @@
+﻿@using VacationTrip.Models.Siniflar
+@model List<Blog>
+
+
+<div class="padding1">
+    <h4>Tavsiye Ettiğim Yerler</h4>
+    <div class="box-left">
+        @foreach (var x in Model)
+        {
+            if (x.ID <= 11)
+            {
+                <div class="bot-img">
+                    <a href="/Blog/BlogDetay/@x.ID"> <img src="@x.BlogImage" alt="" style="width:120px; height:80px;" /> </a>
+                </div>
+                <div class="bot-desc">
+                    <p>@x.Aciklama.Substring(0, 80)... </p>
+                </div>
+                <div class="clear"></div>
+            }
+
+        }
+    </div>
+    @foreach (var y in Model)
+    {
+        if (y.ID >= 12 && y.ID <= 14)
+        {
+            <div class="box1-left">
+                <div class="bot-img">
+                    
+                    <a href="/Blog/BlogDetay/@y.ID"> <img src="@y.BlogImage" alt="" style="width:120px; height:80px;" /> </a>
+                </div>
+                <div class="bot-desc1">
+                    <p>@y.Aciklama.Substring(0, 80)... </p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+
+    }
+</div>
